@@ -1,0 +1,14 @@
+{
+  "activities": [
+    {
+      "id": 1,
+      "title": "Planting Maize",
+      "date": "2025-10-20",
+      "type": "planting",
+      "status": "Completed",
+      "description": "Planted maize in Field A using hybrid seeds.",
+      "duration": "3 hours",
+      "workers": ["John", "Mary"]
+    }
+  ]
+}
