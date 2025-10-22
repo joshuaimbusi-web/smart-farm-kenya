@@ -1,12 +1,36 @@
-import ActivityCard from "./ActivityCard";
+import { Link } from "react-router-dom";
 
-export default function ActivityList({ activities }) {
+export default function ActivityList({ activities, deleteActivity }) {
   return (
     <div className="activity-list">
-      {activities.map((activity) => (
-        <ActivityCard key={activity.id} activity={activity} />
-      ))}
+      {activities.length === 0 ? (
+        <p className="empty-message">No activities yet. Add one!</p>
+      ) : (
+        activities.map((activity) => (
+          <div key={activity.id} className="activity-card">
+            <div className="activity-info">
+              <h2 className="activity-title">{activity.title}</h2>
+              <p className="activity-date">{activity.date}</p>
+              <p className="activity-description">{activity.description}</p>
+              <p className="activity-meta">Type: {activity.type}</p>
+              <p className="activity-meta">Status: {activity.status}</p>
+
+              <Link to={`/activities/${activity.id}`} className="activity-link">
+                View Details →
+              </Link>
+            </div>
+
+            <button
+              onClick={() => deleteActivity(activity.id)}
+              className="delete-btn"
+            >
+              X
+            </button>
+          </div>
+        ))
+      )}
     </div>
   );
 }
+
 

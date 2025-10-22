@@ -5,10 +5,20 @@
       "title": "Planting Maize",
       "date": "2025-10-20",
       "type": "planting",
-      "status": "Completed",
-      "description": "Planted maize in Field A using hybrid seeds.",
+      "status": "completed",
+      "description": "Planted maize on the west field.",
       "duration": "3 hours",
       "workers": ["John", "Mary"]
+    },
+    {
+      "id": 2,
+      "title": "Irrigation of Tomatoes",
+      "date": "2025-10-21",
+      "type": "irrigation",
+      "status": "in progress",
+      "description": "Irrigated tomato plants in section B.",
+      "duration": "1.5 hours",
+      "workers": ["Peter", "Grace"]
     }
   ]
 }

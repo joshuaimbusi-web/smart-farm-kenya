@@ -3,20 +3,25 @@ import AddActivityForm from "../components/AddActivityForm";
 import FilterBar from "../components/FilterBar";
 import { useState } from "react";
 
-export default function Home({ activities, addActivity }) {
+export default function Home({ activities, addActivity, deleteActivity }) {
   const [filter, setFilter] = useState("all");
 
   const filteredActivities =
-    filter === "all" ? activities : activities.filter((a) => a.type === filter);
+    filter === "all"
+      ? activities
+      : activities.filter((a) => a.type === filter);
 
   return (
-    <div className="home">
-      <h1>Daily Farm Activities</h1>
+    <div className="home-container">
+      <h1 className="page-title">Daily Farm Activities</h1>
       <FilterBar filter={filter} setFilter={setFilter} />
-      <div className="activity-list">
-        <ActivityList activities={filteredActivities} />
-      </div>
+      <ActivityList
+        activities={filteredActivities}
+        deleteActivity={deleteActivity}
+      />
       <AddActivityForm addActivity={addActivity} />
     </div>
   );
 }
+
+

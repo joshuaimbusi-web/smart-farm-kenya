@@ -6,7 +6,8 @@ export default function AddActivityForm({ addActivity }) {
     date: "",
     type: "",
     status: "",
-    description: ""
+    description: "",
+    workers: "" 
   });
 
   function handleChange(e) {
@@ -15,23 +16,32 @@ export default function AddActivityForm({ addActivity }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    const activityData = {
+      ...formData,
+      workers: formData.workers
+        ? formData.workers.split(",").map((w) => w.trim())
+        : []
+    };
+
     const configObj = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(activityData)
     };
 
     fetch("http://localhost:3000/activities", configObj)
       .then((res) => res.json())
       .then((newActivity) => {
-        addActivity(newActivity);
+        addActivity(newActivity); 
         setFormData({
           title: "",
           date: "",
           type: "",
           status: "",
-          description: ""
-        });
+          description: "",
+          workers: ""
+        }); 
       });
   }
 
@@ -83,7 +93,18 @@ export default function AddActivityForm({ addActivity }) {
         onChange={handleChange}
       ></textarea>
 
-      <button type="submit">Add Activity</button>
+      <input
+        type="text"
+        name="workers"
+        placeholder="Workers (comma separated, e.g., John, Mary)"
+        value={formData.workers}
+        onChange={handleChange}
+      />
+
+      <button type="submit" className="btn-submit">
+        Add Activity
+      </button>
     </form>
   );
 }
+
