@@ -355,9 +355,9 @@ body {
 }
 
 .activity-list {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr); 
+  gap: 3rem; 
 }
 
 .activity-card {

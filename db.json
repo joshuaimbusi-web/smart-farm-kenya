@@ -1,24 +1,106 @@
 {
   "activities": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Planting Maize",
       "date": "2025-10-20",
       "type": "planting",
       "status": "completed",
       "description": "Planted maize on the west field.",
       "duration": "3 hours",
-      "workers": ["John", "Mary"]
+      "workers": [
+        "John",
+        "Mary"
+      ]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Irrigation of Tomatoes",
       "date": "2025-10-21",
       "type": "irrigation",
       "status": "in progress",
       "description": "Irrigated tomato plants in section B.",
       "duration": "1.5 hours",
-      "workers": ["Peter", "Grace"]
+      "workers": [
+        "Peter",
+        "Grace"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Planting Wheat",
+      "date": "2025-10-30",
+      "type": "planting",
+      "status": "pending",
+      "description": "Scheduled planting of wheat crops.",
+      "duration": "2 hours",
+      "workers": [
+        "Alice",
+        "Bob"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Irrigation of Kales",
+      "date": "2025-10-23",
+      "type": "irrigation",
+      "status": "completed",
+      "description": "Irrigated kales in secion C.",
+      "duration": "2.5 hours",
+      "workers": [
+        "Charlie",
+        "Diana"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Harvesting Potatoes",
+      "date": "2025-10-18",
+      "type": "harvesting",
+      "status": "completed",
+      "description": "Harvested potatoes from field D.",
+      "duration": "4 hours",
+      "workers": [
+        "Eve",
+        "Frank"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Planting Carrots",
+      "date": "2025-10-22",
+      "type": "planting",
+      "status": "in progress",
+      "description": "Planting carrots in section A.",
+      "duration": "2 hours",
+      "workers": [
+        "Hannah",
+        "Ian"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Harvesting Apples",
+      "date": "2025-10-16",
+      "type": "harvesting",
+      "status": "completed",
+      "description": "Harvested apples from orchard section C",
+      "workers": [
+        "Jack",
+        "Kathy"
+      ]
+    },
+    {
+      "id": "8a66",
+      "title": "Harvesting Cabbages",
+      "date": "2025-10-17",
+      "type": "harvesting",
+      "status": "completed",
+      "description": "Harvested cabbages in section A",
+      "workers": [
+        "Brian",
+        "Tom"
+      ]
     }
   ]
 }
