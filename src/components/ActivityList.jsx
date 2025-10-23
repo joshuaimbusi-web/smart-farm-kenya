@@ -23,7 +23,7 @@ export default function ActivityList({ activities, deleteActivity, onEdit }) {
             </div>
 
             <div className="card-actions">
-              <button onClick={() => onEdit(activity)} className="edit-btn">edit</button>
+              {/* <button onClick={() => onEdit(activity)} className="edit-btn">edit</button> */}
               <button onClick={() => deleteActivity(activity.id)} className="delete-btn">delete</button>
             </div>
           </div>

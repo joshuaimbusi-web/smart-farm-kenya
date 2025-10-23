@@ -2,15 +2,15 @@
   "activities": [
     {
       "id": "1",
-      "title": "Planting Maize",
-      "date": "2025-10-20",
+      "title": "Planting Sugarcane",
+      "date": "2025-11-01",
       "type": "planting",
-      "status": "completed",
-      "description": "Planted maize on the west field.",
+      "status": "Pending",
+      "description": "To plant sugarcane on the east field",
       "duration": "3 hours",
       "workers": [
-        "John",
-        "Mary"
+        "Mary",
+        "Meshack"
       ]
     },
     {
@@ -37,18 +37,6 @@
       "workers": [
         "Hannah",
         "Ian"
-      ]
-    },
-    {
-      "id": "7",
-      "title": "Harvesting Apples",
-      "date": "2025-10-30",
-      "type": "harvesting",
-      "status": "Pending",
-      "description": "Harvest apples from orchard section C",
-      "workers": [
-        "Jack",
-        "Kathy"
       ]
     },
     {
@@ -86,6 +74,110 @@
         "Brian",
         "Tom"
       ]
+    }
+  ],
+  "farmProducts": [
+    {
+      "id": 1,
+      "name": "Fresh Eggs",
+      "description": "Farm-fresh organic eggs from free-range chickens.",
+      "price": 300,
+      "category": "Animal Products",
+      "image": "https://cdn.pixabay.com/photo/2019/05/31/00/15/egg-4241145_1280.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Cabbages",
+      "description": "Large green cabbages grown organically without pesticides.",
+      "price": 100,
+      "category": "Vegetables",
+      "image": "https://tse2.mm.bing.net/th/id/OIP.wsBmcwCmlk8iETucnolh5QHaE6?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": 3,
+      "name": "Broiler Chicken",
+      "description": "Healthy farm-raised broiler chickens, ready for sale.",
+      "price": 800,
+      "category": "Animal Products",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.1gShX54Kjq92frgL6_PwPwHaEL?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": 4,
+      "name": "Rabbits",
+      "description": "Healthy rabbits ideal for meat or breeding.",
+      "price": 1200,
+      "category": "Animal Products",
+      "image": "https://th.bing.com/th/id/R.cf10d9c6254f2cb8248fa5aa6d945647?rik=W4W5jJidNGoY8A&riu=http%3a%2f%2f2.bp.blogspot.com%2f-FvGXhjpHB0k%2fUCDFwAc3uxI%2fAAAAAAAAOAY%2fEeJrNN3v39I%2fs1600%2fRabbit7.jpg&ehk=TDRqeVFpy41%2bXz8WrSN0eZqJJNtifrcQLOuo3n4GBho%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 5,
+      "name": "Maize",
+      "description": "Dried maize grains ready for milling or resale.",
+      "price": 2500,
+      "category": "Cereals",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.sd3epfK4rOJs_Po58CXhUgHaFj?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": 6,
+      "name": "Beans",
+      "description": "High-quality mixed beans rich in protein and fiber.",
+      "price": 2800,
+      "category": "Cereals",
+      "image": "https://modernfarmer.com/wp-content/uploads/2015/04/beans.jpeg"
+    },
+    {
+      "id": 7,
+      "name": "Spinach",
+      "description": "Freshly harvested spinach rich in iron and vitamins.",
+      "price": 80,
+      "category": "Vegetables",
+      "image": "https://tse1.mm.bing.net/th/id/OIP.vgHmFqBDg2pkEyvkw9bl1wHaHa?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": "ce1ae236-3c46-49a3-9fb5-a5b44e2665a6",
+      "name": "Tomatoes",
+      "category": "Vegetables",
+      "price": 100,
+      "description": "Freshly picked tomatoes grown organically",
+      "image": "https://cdn.pixabay.com/photo/2022/09/05/09/50/tomatoes-7433786_640.jpg"
+    }
+  ],
+  "soldItems": [
+    {
+      "id": 4,
+      "name": "Rabbits",
+      "description": "Healthy rabbits ideal for meat or breeding.",
+      "price": 1200,
+      "category": "Animal Products",
+      "image": "https://th.bing.com/th/id/R.cf10d9c6254f2cb8248fa5aa6d945647?rik=W4W5jJidNGoY8A&riu=http%3a%2f%2f2.bp.blogspot.com%2f-FvGXhjpHB0k%2fUCDFwAc3uxI%2fAAAAAAAAOAY%2fEeJrNN3v39I%2fs1600%2fRabbit7.jpg&ehk=TDRqeVFpy41%2bXz8WrSN0eZqJJNtifrcQLOuo3n4GBho%3d&risl=&pid=ImgRaw&r=0",
+      "soldDate": "2025-10-23T18:45:50.011Z"
+    },
+    {
+      "id": 7,
+      "name": "Spinach",
+      "description": "Freshly harvested spinach rich in iron and vitamins.",
+      "price": 80,
+      "category": "Vegetables",
+      "image": "https://tse1.mm.bing.net/th/id/OIP.vgHmFqBDg2pkEyvkw9bl1wHaHa?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "soldDate": "2025-10-23T18:49:05.034Z"
+    },
+    {
+      "id": 7,
+      "name": "Spinach",
+      "description": "Freshly harvested spinach rich in iron and vitamins.",
+      "price": 80,
+      "category": "Vegetables",
+      "image": "https://tse1.mm.bing.net/th/id/OIP.vgHmFqBDg2pkEyvkw9bl1wHaHa?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "soldDate": "2025-10-23T19:39:00.120Z"
+    },
+    {
+      "id": "a754a6a3-74d3-4a13-b561-e3a6fde573ce",
+      "name": "Tomatoes",
+      "category": "Vegetables",
+      "price": 100,
+      "description": "fhddf,nmbm",
+      "image": "https://cdn.pixabay.com/photo/2022/09/05/09/50/tomatoes-7433786_640.jpg",
+      "soldDate": "2025-10-23T21:07:28.435Z"
     }
   ]
 }

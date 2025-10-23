@@ -10,7 +10,7 @@ export default function Home() {
             smart, and efficient farming for Kenya’s future.
           </p>
           <a href="/add" className="hero-btn">
-             Add New Activity
+            Add New Activity
           </a>
         </div>
 
@@ -26,12 +26,13 @@ export default function Home() {
         </div>
       </section>
       <section className="marketing-section">
-  <h2>Why Choose Smart-Farm-Kenya?</h2>
-  <p className="marketing-intro">
-    Smart-Farm-Kenya helps farmers manage daily activities, track resources,
-    and make informed decisions for a more efficient and profitable farm.
-  </p>
-  </section>
+        <h2>Why Choose Smart-Farm-Kenya?</h2>
+        <p className="marketing-intro">
+          Smart-Farm-Kenya helps farmers manage daily activities, track resources,
+          and make informed decisions for a more efficient and profitable farm.
+        </p>
+        
+      </section>
     </div>
   );
 }

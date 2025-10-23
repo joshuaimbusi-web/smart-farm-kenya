@@ -10,7 +10,7 @@ export default function FilterBar({ filter, setFilter, search, setSearch, sort, 
 
       <input
         type="text"
-        placeholder="Search by title or worker..."
+        placeholder="Search by title ..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />

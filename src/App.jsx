@@ -7,21 +7,31 @@ import { useEffect, useState } from "react";
 import "./index.css";
 import AddActivity from "./pages/AddActivity";
 import Activities from "./pages/Activities";
-
-
+import FarmProducts from "./pages/FarmProducts";
+import AddProduct from "./pages/AddProduct";  
+import SoldItems from "./pages/SoldItems"; 
 
 export default function App() {
   const [activities, setActivities] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [farmProducts, setFarmProducts] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/activities")
       .then((res) => res.json())
       .then(setActivities)
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
+      .catch((err) => console.error("Error loading activities:", err));
   }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/farmProducts")
+      .then((res) => res.json())
+      .then(setFarmProducts)
+      .catch((err) => console.error("Error loading products:", err));
+  }, []);
+
+  function addProduct(newProduct) {
+    setFarmProducts([...farmProducts, newProduct]);
+  }
 
   function addActivity(newActivity) {
     setActivities([...activities, newActivity]);
@@ -35,40 +45,28 @@ export default function App() {
       .catch((err) => console.error("Delete error:", err));
   }
 
-  function updateActivity(updated) {
-    setActivities((prev) =>
-      prev.map((a) => (a.id === updated.id ? updated : a))
-    );
-  }
-
-  if (loading) return <p className="loading">Loading activities...</p>;
-  if (error) return <p className="error">Error: {error}</p>;
-
   return (
     <div className="app-container">
       <Navbar />
-     <Routes>
-  <Route
-    path="/"
-    element={<Home />}
-  />
-  <Route
-    path="/activities"
-    element={
-      <Activities
-        activities={activities}
-        deleteActivity={deleteActivity}
-      />
-    }
-  />
-  <Route path="/add" element={<AddActivity addActivity={addActivity} />} />
-  <Route path="/about" element={<About />} />
-  <Route path="/activities/:id" element={<ActivityDetails />} />
-</Routes>
-
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/activities"
+          element={
+            <Activities activities={activities} deleteActivity={deleteActivity} />
+          }
+        />
+        <Route path="/add" element={<AddActivity addActivity={addActivity} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/activities/:id" element={<ActivityDetails />} />
+        <Route path="/farm-products" element={<FarmProducts />} />
+        <Route path="/add-product" element={<AddProduct addProduct={addProduct} />} />
+        <Route path="/sold-items" element={<SoldItems />} />
+      </Routes>
     </div>
   );
 }
+
 
 
 
