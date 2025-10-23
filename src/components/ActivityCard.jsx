@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { FaCalendar, FaSeedling } from "react-icons/fa";
+
 
 export default function ActivityCard({ activity }) {
   return (

@@ -14,45 +14,6 @@
       ]
     },
     {
-      "id": "2",
-      "title": "Irrigation of Tomatoes",
-      "date": "2025-10-21",
-      "type": "irrigation",
-      "status": "in progress",
-      "description": "Irrigated tomato plants in section B.",
-      "duration": "1.5 hours",
-      "workers": [
-        "Peter",
-        "Grace"
-      ]
-    },
-    {
-      "id": "3",
-      "title": "Planting Wheat",
-      "date": "2025-10-30",
-      "type": "planting",
-      "status": "pending",
-      "description": "Scheduled planting of wheat crops.",
-      "duration": "2 hours",
-      "workers": [
-        "Alice",
-        "Bob"
-      ]
-    },
-    {
-      "id": "4",
-      "title": "Irrigation of Kales",
-      "date": "2025-10-23",
-      "type": "irrigation",
-      "status": "completed",
-      "description": "Irrigated kales in secion C.",
-      "duration": "2.5 hours",
-      "workers": [
-        "Charlie",
-        "Diana"
-      ]
-    },
-    {
       "id": "5",
       "title": "Harvesting Potatoes",
       "date": "2025-10-18",
@@ -81,10 +42,10 @@
     {
       "id": "7",
       "title": "Harvesting Apples",
-      "date": "2025-10-16",
+      "date": "2025-10-30",
       "type": "harvesting",
-      "status": "completed",
-      "description": "Harvested apples from orchard section C",
+      "status": "Pending",
+      "description": "Harvest apples from orchard section C",
       "workers": [
         "Jack",
         "Kathy"
@@ -97,6 +58,30 @@
       "type": "harvesting",
       "status": "completed",
       "description": "Harvested cabbages in section A",
+      "workers": [
+        "Brian",
+        "Tom"
+      ]
+    },
+    {
+      "id": "e79c",
+      "title": "Irrigating Managu",
+      "date": "2025-10-26",
+      "type": "irrigation",
+      "status": "Pending",
+      "description": "To be irrigated",
+      "workers": [
+        "fred",
+        "joshua"
+      ]
+    },
+    {
+      "id": "9ee4",
+      "title": "Irrigating Sukumawiki",
+      "date": "2025-10-23",
+      "type": "irrigation",
+      "status": "In progress",
+      "description": "Irrigation of sukumawiki in section D",
       "workers": [
         "Brian",
         "Tom"

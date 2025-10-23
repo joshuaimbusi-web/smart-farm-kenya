@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AddActivityForm({ addActivity }) {
   const [formData, setFormData] = useState({
@@ -7,8 +8,10 @@ export default function AddActivityForm({ addActivity }) {
     type: "",
     status: "",
     description: "",
-    workers: "" 
+    workers: ""
   });
+
+  const navigate = useNavigate(); 
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,10 +20,14 @@ export default function AddActivityForm({ addActivity }) {
   function handleSubmit(e) {
     e.preventDefault();
 
+    const workersString = Array.isArray(formData.workers)
+      ? formData.workers.join(", ")
+      : formData.workers;
+
     const activityData = {
       ...formData,
-      workers: formData.workers
-        ? formData.workers.split(",").map((w) => w.trim())
+      workers: workersString
+        ? workersString.split(",").map((w) => w.trim())
         : []
     };
 
@@ -33,7 +40,8 @@ export default function AddActivityForm({ addActivity }) {
     fetch("http://localhost:3000/activities", configObj)
       .then((res) => res.json())
       .then((newActivity) => {
-        addActivity(newActivity); 
+        addActivity(newActivity);
+
         setFormData({
           title: "",
           date: "",
@@ -41,8 +49,11 @@ export default function AddActivityForm({ addActivity }) {
           status: "",
           description: "",
           workers: ""
-        }); 
-      });
+        });
+
+        navigate("/");
+      })
+      .catch((err) => console.error("Add activity error:", err));
   }
 
   return (
@@ -107,4 +118,3 @@ export default function AddActivityForm({ addActivity }) {
     </form>
   );
 }
-
