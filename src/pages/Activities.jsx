@@ -5,11 +5,10 @@ import { useState } from "react";
 
 export default function Activities({ activities, deleteActivity, updateActivity }) {
   const [filter, setFilter] = useState("all");
-  const [search, setSearch] = useState("");       // ✅ add search state
+  const [search, setSearch] = useState("");       
   const [sort, setSort] = useState("date-desc");  
   const [editingActivity, setEditingActivity] = useState(null); 
 
-  // ✅ Apply filtering + searching + sorting
   const filteredActivities = activities
     .filter(a => filter === "all" || a.type === filter)
     .filter(a =>
@@ -36,7 +35,6 @@ export default function Activities({ activities, deleteActivity, updateActivity 
     <div className="activities-page">
       <h1 className="page-title">All Farm Activities</h1>
 
-      {/* ✅ Pass all required props */}
       <FilterBar
         filter={filter}
         setFilter={setFilter}
