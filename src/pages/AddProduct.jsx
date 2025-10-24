@@ -106,7 +106,7 @@ export default function AddProduct({ addProduct }) {
           ></textarea>
         </label>
 
-        <label>
+        {/* <label>
           Image URL
           <input
             type="url"
@@ -116,7 +116,7 @@ export default function AddProduct({ addProduct }) {
             placeholder="https://example.com/image.jpg"
             required
           />
-        </label>
+        </label> */}
 
         <button type="submit" className="submit-btn" disabled={loading}>
           {loading ? "Saving..." : "Add Product"}
