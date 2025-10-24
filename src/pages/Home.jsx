@@ -20,24 +20,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="how-it-works">
-        <h2>How It Works</h2>
-        <div className="steps">
-          <div className="step">
-            <h3>1. Plan</h3>
-            <p>Record your upcoming planting, irrigation, or harvest schedules.</p>
-          </div>
-          <div className="step">
-            <h3>2. Manage</h3>
-            <p>Track all your activities and resources from one dashboard.</p>
-          </div>
-          <div className="step">
-            <h3>3. Harvest & Sell</h3>
-            <p>Sell your farm produce directly through the marketplace.</p>
-          </div>
-        </div>
-      </section>
-
       <section className="featured-products">
         <h2>Featured Farm Products</h2>
         <a href="/add-product" className="newProduct-btn">
@@ -53,6 +35,24 @@ export default function Home() {
             <img src="/images/homey.jpg" alt="Vegetable" />
             <h3>Vegetables</h3>
             <p>Farm fresh vegetables grown Organically.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="how-it-works">
+        <h2>How It Works</h2>
+        <div className="steps">
+          <div className="step">
+            <h3>1. Plan</h3>
+            <p>Record your upcoming planting, irrigation, or harvest schedules.</p>
+          </div>
+          <div className="step">
+            <h3>2. Manage</h3>
+            <p>Track all your activities and resources from one dashboard.</p>
+          </div>
+          <div className="step">
+            <h3>3. Harvest & Sell</h3>
+            <p>Sell your farm produce directly through the marketplace.</p>
           </div>
         </div>
       </section>
