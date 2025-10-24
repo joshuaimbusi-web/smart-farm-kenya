@@ -151,15 +151,6 @@
       "category": "Animal Products",
       "image": "https://cdn.pixabay.com/photo/2015/01/10/11/54/hare-595136_640.jpg",
       "soldDate": "2025-10-23T18:45:50.011Z"
-    },
-    {
-      "id": "1fe821ab-4ba2-4d2a-8828-8c2ac7872417",
-      "name": "Potatoes",
-      "category": "Vegetables",
-      "price": 1500,
-      "description": "Organically grown potatoes",
-      "image": "",
-      "soldDate": "2025-10-24T01:45:56.262Z"
     }
   ]
 }
