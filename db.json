@@ -74,11 +74,23 @@
         "Brian",
         "Tom"
       ]
+    },
+    {
+      "id": "2f6d",
+      "title": "planting carrots",
+      "date": "2025-10-24",
+      "type": "planting",
+      "status": "in progress",
+      "description": "ongoing",
+      "workers": [
+        "Brian",
+        "Tom"
+      ]
     }
   ],
   "farmProducts": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Fresh Eggs",
       "description": "Farm-fresh organic eggs from free-range chickens.",
       "price": 300,
@@ -86,7 +98,7 @@
       "image": "https://cdn.pixabay.com/photo/2019/05/31/00/15/egg-4241145_1280.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Cabbages",
       "description": "Large green cabbages grown organically without pesticides.",
       "price": 100,
@@ -94,7 +106,7 @@
       "image": "https://cdn.pixabay.com/photo/2018/10/03/22/08/kohl-3722517_1280.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Broiler Chicken",
       "description": "Healthy farm-raised broiler chickens, ready for sale.",
       "price": 800,
@@ -102,7 +114,7 @@
       "image": "https://cdn.pixabay.com/photo/2020/03/16/19/43/chicken-4938114_640.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Rabbits",
       "description": "Healthy rabbits ideal for meat or breeding.",
       "price": 1200,
@@ -110,7 +122,7 @@
       "image": "https://cdn.pixabay.com/photo/2015/01/10/11/54/hare-595136_640.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Maize",
       "description": "Dried maize grains ready for milling or resale.",
       "price": 2500,
@@ -118,7 +130,7 @@
       "image": "https://cdn.pixabay.com/photo/2014/10/24/15/59/corn-501441_640.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Beans",
       "description": "High-quality mixed beans rich in protein and fiber.",
       "price": 2800,
@@ -126,12 +138,23 @@
       "image": "https://cdn.pixabay.com/photo/2023/02/06/17/30/beans-7772449_640.jpg"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Spinach",
       "description": "Freshly harvested spinach rich in iron and vitamins.",
       "price": 80,
       "category": "Vegetables",
       "image": "https://cdn.pixabay.com/photo/2013/01/05/13/56/real-spinach-73911_1280.jpg"
+    }
+  ],
+  "soldItems": [
+    {
+      "id": "4",
+      "name": "Rabbits",
+      "description": "Healthy rabbits ideal for meat or breeding.",
+      "price": 1200,
+      "category": "Animal Products",
+      "image": "https://cdn.pixabay.com/photo/2015/01/10/11/54/hare-595136_640.jpg",
+      "soldDate": "2025-10-23T18:45:50.011Z"
     },
     {
       "id": "ce1ae236-3c46-49a3-9fb5-a5b44e2665a6",
@@ -139,18 +162,8 @@
       "category": "Vegetables",
       "price": 100,
       "description": "Freshly picked tomatoes grown organically",
-      "image": "https://cdn.pixabay.com/photo/2022/09/05/09/50/tomatoes-7433786_640.jpg"
-    }
-  ],
-  "soldItems": [
-    {
-      "id": 4,
-      "name": "Rabbits",
-      "description": "Healthy rabbits ideal for meat or breeding.",
-      "price": 1200,
-      "category": "Animal Products",
-      "image": "https://cdn.pixabay.com/photo/2015/01/10/11/54/hare-595136_640.jpg",
-      "soldDate": "2025-10-23T18:45:50.011Z"
+      "image": "https://cdn.pixabay.com/photo/2022/09/05/09/50/tomatoes-7433786_640.jpg",
+      "soldDate": "2025-10-25T04:17:52.784Z"
     }
   ]
 }

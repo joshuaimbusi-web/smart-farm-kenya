@@ -1,13 +1,11 @@
 import ActivityList from "../components/ActivityList";
 import FilterBar from "../components/FilterBar";
-import EditActivityForm from "../components/EditActivityForm"; 
 import { useState } from "react";
 
-export default function Activities({ activities, deleteActivity, updateActivity }) {
+export default function Activities({ activities, deleteActivity }) {
   const [filter, setFilter] = useState("all");
-  const [search, setSearch] = useState("");       
-  const [sort, setSort] = useState("date-desc");  
-  const [editingActivity, setEditingActivity] = useState(null); 
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("date-desc");
 
   const filteredActivities = activities
     .filter(a => filter === "all" || a.type === filter)
@@ -22,15 +20,6 @@ export default function Activities({ activities, deleteActivity, updateActivity 
       return 0;
     });
 
-  function handleEdit(activity) {
-    setEditingActivity(activity);
-  }
-
-  function handleUpdate(updatedActivity) {
-    updateActivity(updatedActivity);
-    setEditingActivity(null);
-  }
-
   return (
     <div className="activities-page">
       <h1 className="page-title">All Farm Activities</h1>
@@ -44,18 +33,10 @@ export default function Activities({ activities, deleteActivity, updateActivity 
         setSort={setSort}
       />
 
-      {editingActivity ? (
-        <EditActivityForm
-          activity={editingActivity}
-          updateActivity={handleUpdate}
-        />
-      ) : (
-        <ActivityList
-          activities={filteredActivities}
-          deleteActivity={deleteActivity}
-          onEdit={handleEdit}
-        />
-      )}
+      <ActivityList
+        activities={filteredActivities}
+        deleteActivity={deleteActivity}
+      />
     </div>
   );
 }
