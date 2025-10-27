@@ -924,6 +924,61 @@ body {
   font-size: 0.9rem;
   margin-top: 5px;
 }
+.hero-section {
+  position: relative;
+background-image: url('https://www.kenyanews.go.ke/wp-content/uploads/2022/09/Agriculture-1200x630.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 100px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90vh; 
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero-btn,
+.newProduct-btn {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover,
+.newProduct-btn:hover {
+  background-color: #45a049;
+}
+
+.hero-images img {
+  width: 250px;
+  border-radius: 12px;
+  margin-left: 20px;
+  z-index: 1;
+  position: relative;
+}
+
 
 
 

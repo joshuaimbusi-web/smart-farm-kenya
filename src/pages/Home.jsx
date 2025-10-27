@@ -15,8 +15,7 @@ export default function Home() {
         </div>
 
         <div className="hero-images">
-          <img src="/images/homep.jpg" alt="Farm" />
-          <img src="/images/home.jpg" alt="Field" />
+          <img src="/images/homey.jpg" alt="Field" />
         </div>
       </section>
 
