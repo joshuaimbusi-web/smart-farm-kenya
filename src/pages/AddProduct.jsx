@@ -18,41 +18,42 @@ export default function AddProduct({ addProduct }) {
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
+  e.preventDefault();
+  setLoading(true);
+  setError(null);
 
-    const newProduct = {
-      ...formData,
-      price: Number(formData.price),
-      id: crypto.randomUUID(),
-    };
+  const newProduct = {
+    ...formData,
+    price: Number(formData.price),
+  };
 
-    try {
-      const res = await fetch("http://localhost:3000/farmProducts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newProduct),
-      });
+  try {
+    const res = await fetch("http://localhost:3000/farmProducts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newProduct),
+    });
 
-      if (!res.ok) throw new Error("Failed to save product");
+    if (!res.ok) throw new Error("Failed to save product");
 
-      addProduct(newProduct);
-      setSuccess(true);
-      setFormData({
-        name: "",
-        category: "",
-        price: "",
-        description: "",
-        image: "",
-      });
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-      setTimeout(() => setSuccess(false), 2000);
-    }
+    const savedProduct = await res.json();
+
+    addProduct(savedProduct); 
+    setSuccess(true);
+    setFormData({
+      name: "",
+      category: "",
+      price: "",
+      description: "",
+      image: "",
+    });
+  } catch (err) {
+    setError(err.message);
+  } finally {
+    setLoading(false);
+    setTimeout(() => setSuccess(false), 2000);
   }
+}
 
   return (
     <div className="add-product-container">

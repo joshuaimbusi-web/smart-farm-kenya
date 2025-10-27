@@ -114,14 +114,6 @@
       "image": "https://cdn.pixabay.com/photo/2020/03/16/19/43/chicken-4938114_640.jpg"
     },
     {
-      "id": "4",
-      "name": "Rabbits",
-      "description": "Healthy rabbits ideal for meat or breeding.",
-      "price": 1200,
-      "category": "Animal Products",
-      "image": "https://cdn.pixabay.com/photo/2015/01/10/11/54/hare-595136_640.jpg"
-    },
-    {
       "id": "5",
       "name": "Maize",
       "description": "Dried maize grains ready for milling or resale.",
@@ -164,6 +156,15 @@
       "description": "Freshly picked tomatoes grown organically",
       "image": "https://cdn.pixabay.com/photo/2022/09/05/09/50/tomatoes-7433786_640.jpg",
       "soldDate": "2025-10-25T04:17:52.784Z"
+    },
+    {
+      "id": "4",
+      "name": "Rabbits",
+      "description": "Healthy rabbits ideal for meat or breeding.",
+      "price": 1200,
+      "category": "Animal Products",
+      "image": "https://cdn.pixabay.com/photo/2015/01/10/11/54/hare-595136_640.jpg",
+      "soldDate": "2025-10-27T04:48:49.031Z"
     }
   ]
 }

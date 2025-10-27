@@ -25,40 +25,38 @@ export default function FarmProducts() {
   const categories = ["all", ...new Set(products.map((p) => p.category))];
 
   const handleSell = async (product) => {
-  try {
-    const res = await fetch("http://localhost:3000/soldItems", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...product,
-        soldDate: new Date().toISOString(),
-      }),
-    });
+    try {
+      const res = await fetch("http://localhost:3000/soldItems", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...product,
+          soldDate: new Date().toISOString(),
+        }),
+      });
 
-    if (!res.ok) {
-      const errText = await res.text();
-      throw new Error(`Failed to mark as sold: ${errText}`);
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(`Failed to mark as sold: ${errText}`);
+      }
+
+      setProducts(products.filter((p) => p.id !== product.id));
+
+      await fetch(`http://localhost:3000/farmProducts/${product.id}`, {
+        method: "DELETE",
+      });
+
+      setMessage(`${product.name} sold successfully!`);
+      setTimeout(() => setMessage(""), 2500);
+    } catch (err) {
+      console.error("Error selling product:", err);
+      setMessage("Failed to sell product.");
     }
-
-    setProducts(products.filter((p) => p.id !== product.id));
-
-    await fetch(`http://localhost:3000/farmProducts/${product.id}`, {
-      method: "DELETE",
-    });
-
-    setMessage(`✅ ${product.name} sold successfully!`);
-    setTimeout(() => setMessage(""), 2500);
-  } catch (err) {
-    console.error("Error selling product:", err);
-    setMessage("❌ Failed to sell product.");
-  }
-};
-
+  };
 
   return (
     <div className="farm-products-container">
       <h1 className="farm-products-title">Farm Products for Sale</h1>
-
       <p className="farm-products-description">
         Browse our selection of fresh, organic, and farm-raised products straight from the farm.
       </p>
@@ -74,15 +72,11 @@ export default function FarmProducts() {
           className="search-input"
         />
 
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="filter-select"
-        >
+        <select value={category} onChange={(e) => setCategory(e.target.value)}
+          className="filter-select">
           {categories.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
-            </option>
+            <option key={cat} value={cat}> {cat.charAt(0).toUpperCase() + cat.slice(1)}
+        </option>
           ))}
         </select>
       </div>
@@ -90,11 +84,9 @@ export default function FarmProducts() {
       <div className="products-grid">
         {filteredProducts.map((product) => (
           <div key={product.id} className="product-card">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="product-image"
-            />
+            {product.image && (
+              <img src={product.image} alt={product.name} className="product-image" />
+            )}
             <div className="product-info">
               <h2 className="product-name">{product.name}</h2>
               <p className="product-text">{product.description}</p>
@@ -102,11 +94,8 @@ export default function FarmProducts() {
                 <span className="product-price">
                   Ksh {product.price.toLocaleString()}
                 </span>
-                <button
-                  className="sell-btn"
-                  onClick={() => handleSell(product)}
-                >
-                  Sell
+                <button className="sell-btn" onClick={() => handleSell(product)}>
+                  Buy
                 </button>
               </div>
             </div>
@@ -120,4 +109,3 @@ export default function FarmProducts() {
     </div>
   );
 }
-
