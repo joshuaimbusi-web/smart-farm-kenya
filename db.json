@@ -95,7 +95,9 @@
       "description": "Farm-fresh organic eggs from free-range chickens.",
       "price": 300,
       "category": "Animal Products",
-      "image": "https://cdn.pixabay.com/photo/2019/05/31/00/15/egg-4241145_1280.jpg"
+      "image": "https://cdn.pixabay.com/photo/2019/05/31/00/15/egg-4241145_1280.jpg",
+      "status": "Reserved",
+      "quantity": "20"
     },
     {
       "id": "2",
@@ -114,28 +116,13 @@
       "image": "https://cdn.pixabay.com/photo/2020/03/16/19/43/chicken-4938114_640.jpg"
     },
     {
-      "id": "5",
-      "name": "Maize",
-      "description": "Dried maize grains ready for milling or resale.",
-      "price": 2500,
-      "category": "Cereals",
-      "image": "https://cdn.pixabay.com/photo/2014/10/24/15/59/corn-501441_640.jpg"
-    },
-    {
-      "id": "6",
-      "name": "Beans",
-      "description": "High-quality mixed beans rich in protein and fiber.",
-      "price": 2800,
-      "category": "Cereals",
-      "image": "https://cdn.pixabay.com/photo/2023/02/06/17/30/beans-7772449_640.jpg"
-    },
-    {
       "id": "7",
       "name": "Spinach",
       "description": "Freshly harvested spinach rich in iron and vitamins.",
       "price": 80,
       "category": "Vegetables",
-      "image": "https://cdn.pixabay.com/photo/2013/01/05/13/56/real-spinach-73911_1280.jpg"
+      "image": "https://cdn.pixabay.com/photo/2013/01/05/13/56/real-spinach-73911_1280.jpg",
+      "status": "Available"
     }
   ],
   "soldItems": [
@@ -158,13 +145,74 @@
       "soldDate": "2025-10-25T04:17:52.784Z"
     },
     {
-      "id": "4",
-      "name": "Rabbits",
-      "description": "Healthy rabbits ideal for meat or breeding.",
-      "price": 1200,
-      "category": "Animal Products",
-      "image": "https://cdn.pixabay.com/photo/2015/01/10/11/54/hare-595136_640.jpg",
-      "soldDate": "2025-10-27T04:48:49.031Z"
+      "id": "5",
+      "name": "Maize",
+      "description": "Dried maize grains ready for milling or resale.",
+      "price": 2500,
+      "category": "Cereals",
+      "image": "https://cdn.pixabay.com/photo/2014/10/24/15/59/corn-501441_640.jpg",
+      "soldDate": "2025-10-27T09:49:44.214Z"
+    },
+    {
+      "id": "6",
+      "name": "Beans",
+      "description": "High-quality mixed beans rich in protein and fiber.",
+      "price": 2800,
+      "category": "Cereals",
+      "image": "https://cdn.pixabay.com/photo/2023/02/06/17/30/beans-7772449_640.jpg",
+      "soldDate": "2025-10-27T20:44:30.099Z"
     }
-  ]
+  ],
+  "pestsAndDiseases": [
+    {
+      "id": 1,
+      "name": "Fall Armyworm",
+      "crop": "Maize",
+      "symptoms": "Leaves appear ragged with holes; larvae found inside maize whorls.",
+      "prevention": "Plant early, rotate crops, and use pest-resistant maize varieties.",
+      "control": "Apply Bt-based biopesticides or neem extracts.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Spodoptera_frugiperda_larva.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Late Blight",
+      "crop": "Potato",
+      "symptoms": "Brownish-black lesions on leaves and stems; rapid leaf decay in wet weather.",
+      "prevention": "Use certified seed, avoid overhead irrigation, ensure field drainage.",
+      "control": "Spray fungicides like Mancozeb or Copper-based products.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Potato_blight_-_Phytophthora_infestans.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Aphids",
+      "crop": "Beans",
+      "symptoms": "Sticky honeydew on leaves; stunted plant growth.",
+      "prevention": "Encourage natural predators (ladybirds), avoid excessive nitrogen.",
+      "control": "Use neem oil or insecticidal soap sprays.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Aphids_on_bean_leaf.jpg"
+    }
+  ],
+"regionalTips": [
+  {
+    "id": 1,
+    "region": "Highlands",
+    "crop": "Potato",
+    "issue": "Late Blight",
+    "recommendation": "Apply fungicides like Mancozeb before rainfall; use certified seed."
+  },
+  {
+    "id": 2,
+    "region": "Lowlands",
+    "crop": "Maize",
+    "issue": "Fall Armyworm",
+    "recommendation": "Scout fields early; use neem extract or Bt-based control if detected."
+  },
+  {
+    "id": 3,
+    "region": "Coastal",
+    "crop": "Coconut",
+    "issue": "Bud Rot",
+    "recommendation": "Ensure proper drainage and remove infected fronds."
+  }
+]
 }

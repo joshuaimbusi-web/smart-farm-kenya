@@ -18,19 +18,12 @@ export default function Navbar() {
           Farm Products
         </NavLink>
 
-        {/* <NavLink to="/add-product" className={({ isActive }) => (isActive ? "active" : "")}>
-          Add Product
-        </NavLink> */}
+        <NavLink to="/dashboard">Dashboard</NavLink>
+  </div>
+        <li><a href="/sold-items">Sold Items</a></li>
+        <li><a href="/pests-and-diseases">Pests & Diseases</a></li>
+        <li><a href="/localized-tips">Localized Tips</a></li>
 
-        <NavLink to="/sold-items" className={({ isActive }) => (isActive ? "active" : "")}>
-          Sold Items
-        </NavLink>
-
-
-        {/* <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")}>
-          About
-        </NavLink> */}
-      </div>
     </nav>
   );
 }

@@ -10,6 +10,9 @@ import Activities from "./pages/Activities";
 import FarmProducts from "./pages/FarmProducts";
 import AddProduct from "./pages/AddProduct";  
 import SoldItems from "./pages/SoldItems"; 
+import Dashboard from "./pages/FarmerDashboard"; 
+import PestsAndDiseases from "./pages/PestsAndDiseases";
+import LocalizedTips from "./pages/LocalizedTips";
 
 export default function App() {
   const [activities, setActivities] = useState([]);
@@ -62,6 +65,9 @@ export default function App() {
         <Route path="/farm-products" element={<FarmProducts />} />
         <Route path="/add-product" element={<AddProduct addProduct={addProduct} />} />
         <Route path="/sold-items" element={<SoldItems />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/pests-and-diseases" element={<PestsAndDiseases />} />
+        <Route path="/localized-tips" element={<LocalizedTips />} />
       </Routes>
     </div>
   );
