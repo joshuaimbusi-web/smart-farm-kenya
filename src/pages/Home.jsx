@@ -25,7 +25,7 @@ export default function Home() {
           <a href="/about">About</a>
           <a href="/activities">Activities</a>
           <a href="/farm-products">Products</a>
-          <a href="mailto:info@smartfarmkenya.com">Contact</a>
+          <a href="info@smartfarmkenya">Contact</a>
         </div>
       </footer>
     </div>
