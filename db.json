@@ -114,15 +114,6 @@
       "price": 800,
       "category": "Animal Products",
       "image": "https://cdn.pixabay.com/photo/2020/03/16/19/43/chicken-4938114_640.jpg"
-    },
-    {
-      "id": "7",
-      "name": "Spinach",
-      "description": "Freshly harvested spinach rich in iron and vitamins.",
-      "price": 80,
-      "category": "Vegetables",
-      "image": "https://cdn.pixabay.com/photo/2013/01/05/13/56/real-spinach-73911_1280.jpg",
-      "status": "Available"
     }
   ],
   "soldItems": [
@@ -192,27 +183,27 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Aphids_on_bean_leaf.jpg"
     }
   ],
-"regionalTips": [
-  {
-    "id": 1,
-    "region": "Highlands",
-    "crop": "Potato",
-    "issue": "Late Blight",
-    "recommendation": "Apply fungicides like Mancozeb before rainfall; use certified seed."
-  },
-  {
-    "id": 2,
-    "region": "Lowlands",
-    "crop": "Maize",
-    "issue": "Fall Armyworm",
-    "recommendation": "Scout fields early; use neem extract or Bt-based control if detected."
-  },
-  {
-    "id": 3,
-    "region": "Coastal",
-    "crop": "Coconut",
-    "issue": "Bud Rot",
-    "recommendation": "Ensure proper drainage and remove infected fronds."
-  }
-]
+  "regionalTips": [
+    {
+      "id": 1,
+      "region": "Highlands",
+      "crop": "Potato",
+      "issue": "Late Blight",
+      "recommendation": "Apply fungicides like Mancozeb before rainfall; use certified seed."
+    },
+    {
+      "id": 2,
+      "region": "Lowlands",
+      "crop": "Maize",
+      "issue": "Fall Armyworm",
+      "recommendation": "Scout fields early; use neem extract or Bt-based control if detected."
+    },
+    {
+      "id": 3,
+      "region": "Coastal",
+      "crop": "Coconut",
+      "issue": "Bud Rot",
+      "recommendation": "Ensure proper drainage and remove infected fronds."
+    }
+  ]
 }
