@@ -1,8 +1,9 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function ActivityDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [activity, setActivity] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,23 +23,39 @@ export default function ActivityDetails() {
   if (error) return <p>Error: {error}</p>;
   if (!activity) return <p>Activity not found</p>;
 
-  return (
-    <div className="activity-details">
-      <Link to="/" className="back-link">← Back</Link>
-      <h1>{activity.title}</h1>
-      <p><strong>Date:</strong> {activity.date}</p>
-      <p><strong>Type:</strong> {activity.type}</p>
-      <p><strong>Status:</strong> {activity.status}</p>
-      <p><strong>Description:</strong> {activity.description}</p>
+  const handleBack = () => {
+    if (window.history.length > 1) navigate(-1);
+    else navigate('/activities');
+  };
 
-      {activity.workers?.length > 0 && (
-        <div>
-          <strong>Workers:</strong>
-          <ul>
-            {activity.workers.map((w) => <li key={w}>{w}</li>)}
-          </ul>
+  return (
+    <div className="activity-details activity-detail-page container">
+      <button type="button" onClick={handleBack} className="back-link">← Back</button>
+
+      <div className="activity-detail-card card">
+        <h1 className="detail-title">{activity.title}</h1>
+
+        <div className="activity-detail-meta">
+          <p className="meta-row"><strong>Date:</strong> <span>{activity.date}</span></p>
+          <p className="meta-row"><strong>Type:</strong> <span>{activity.type}</span></p>
+          <p className="meta-row"><strong>Status:</strong> <span className="status">{activity.status}</span></p>
         </div>
-      )}
+
+        <div className="activity-detail-body">
+          <p className="activity-description"><strong>Description:</strong> {activity.description}</p>
+
+          {activity.workers?.length > 0 && (
+            <div className="workers">
+              <strong>Workers:</strong>
+              <ul className="workers-list">
+                {activity.workers.map((w) => (
+                  <li key={w} className="worker-item">{w}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

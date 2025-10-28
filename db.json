@@ -189,7 +189,7 @@
       "category": "Cereals",
       "price": 100,
       "description": "selling at at a manageable price",
-      "image": "",
+      "image": "https://plus.unsplash.com/premium_photo-1674654419404-667fcdd0fe13?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2hlYXQlMjBzZWVkfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500",
       "soldDate": "2025-10-28T12:23:50.564Z"
     }
   ],
@@ -210,7 +210,7 @@
       "symptoms": "Brownish-black lesions on leaves and stems; rapid leaf decay in wet weather.",
       "prevention": "Use certified seed, avoid overhead irrigation, ensure field drainage.",
       "control": "Spray fungicides like Mancozeb or Copper-based products.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Potato_blight_-_Phytophthora_infestans.jpg"
+      "image": "https://media.istockphoto.com/id/1942312104/photo/detail-of-potato-crop-affected-by-downy-mildew-phytophthora-infestans-fungus-attacking-potato.jpg?s=1024x1024&w=is&k=20&c=qnZrzXBH0j_fvzvdaD3pBDfgO32CgGVC3OTFrEDRrOI="
     },
     {
       "id": 3,
@@ -219,7 +219,7 @@
       "symptoms": "Sticky honeydew on leaves; stunted plant growth.",
       "prevention": "Encourage natural predators (ladybirds), avoid excessive nitrogen.",
       "control": "Use neem oil or insecticidal soap sprays.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Aphids_on_bean_leaf.jpg"
+      "image": "https://media.istockphoto.com/id/1365844874/photo/aphids-black-fly-on-broad-bean-plant-uk.jpg?s=1024x1024&w=is&k=20&c=FimaXBQA_hCcxh3mhlMHZ8PJejhmqbQg_DSMHrSOVvg="
     }
   ],
   "regionalTips": [

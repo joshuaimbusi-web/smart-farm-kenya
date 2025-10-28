@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Loader from "../components/loader";
+import ProductForm from "../components/ProductForm";
 
 export default function FarmerDashboard() {
   const [products, setProducts] = useState([]);
@@ -12,6 +13,7 @@ export default function FarmerDashboard() {
     image: "",
     status: "Available",
   });
+  const [editingProduct, setEditingProduct] = useState(null);
   const [editingId, setEditingId] = useState(null);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -25,44 +27,30 @@ export default function FarmerDashboard() {
       .finally(() => setLoading(false));
   }, []);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const method = editingId ? "PUT" : "POST";
-    const url = editingId
-      ? `http://localhost:3000/farmProducts/${editingId}`
-      : "http://localhost:3000/farmProducts";
-
-    const res = await fetch(url, {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-
-    if (res.ok) {
-      const newProduct = await res.json();
-      setProducts((prev) =>
-        editingId
-          ? prev.map((p) => (p.id === editingId ? newProduct : p))
-          : [...prev, newProduct]
-      );
-      setForm({
-        name: "",
-        description: "",
-        price: "",
-        category: "",
-        quantity: "",
-        image: "",
-        status: "Available",
+  // handle save from ProductForm (create or update)
+  async function handleSave(productData) {
+    try {
+      const method = editingId ? 'PUT' : 'POST';
+      const url = editingId ? `http://localhost:3000/farmProducts/${editingId}` : 'http://localhost:3000/farmProducts';
+      const res = await fetch(url, {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(productData),
       });
+      if (!res.ok) throw new Error('Failed to save product');
+      const saved = await res.json();
+      setProducts((prev) =>
+        editingId ? prev.map((p) => (p.id === editingId ? saved : p)) : [...prev, saved]
+      );
+      // clear editing state
       setEditingId(null);
-    } else {
-      alert("Error saving product");
+      setEditingProduct(null);
+      return saved;
+    } catch (err) {
+      console.error('Save product error:', err);
+      throw err;
     }
-  };
+  }
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
@@ -75,7 +63,7 @@ export default function FarmerDashboard() {
   };
 
   const handleEdit = (product) => {
-    setForm(product);
+    setEditingProduct(product);
     setEditingId(product.id);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -138,91 +126,12 @@ export default function FarmerDashboard() {
 
       <div className="dashboard-content">
         <div className="product-form-section">
-          <h2>{editingId ? "Edit Product" : "Add New Product"}</h2>
-          <form onSubmit={handleSubmit} className="product-form">
-            <div className="form-row">
-              <div className="form-group">
-                <label>Product Name</label>
-                <input
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Enter product name"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label>Category</label>
-                <input
-                  name="category"
-                  value={form.category}
-                  onChange={handleChange}
-                  placeholder="Enter category"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="form-row">
-              <div className="form-group">
-                <label>Price (Ksh)</label>
-                <input
-                  name="price"
-                  type="number"
-                  value={form.price}
-                  onChange={handleChange}
-                  placeholder="Enter price"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label>Quantity</label>
-                <input
-                  name="quantity"
-                  type="number"
-                  value={form.quantity}
-                  onChange={handleChange}
-                  placeholder="Enter quantity"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="form-group">
-              <label>Description</label>
-              <textarea
-                name="description"
-                value={form.description}
-                onChange={handleChange}
-                placeholder="Enter product description"
-                required
-              />
-            </div>
-
-            <div className="form-row">
-              <div className="form-group">
-                <label>Image URL</label>
-                <input
-                  name="image"
-                  value={form.image}
-                  onChange={handleChange}
-                  placeholder="Enter image URL"
-                />
-              </div>
-              <div className="form-group">
-                <label>Status</label>
-                <select name="status" value={form.status} onChange={handleChange}>
-                  <option value="Available">Available</option>
-                  <option value="Reserved">Reserved</option>
-                  <option value="Sold">Sold</option>
-                </select>
-              </div>
-            </div>
-
-            <button type="submit" className="btn btn-primary submit-btn">
-              {editingId ? "Update Product" : "Add Product"}
-            </button>
-          </form>
+          <h2>{editingId ? 'Edit Product' : 'Add New Product'}</h2>
+          <ProductForm
+            initialData={editingProduct}
+            onSubmit={handleSave}
+            submitLabel={editingId ? 'Update Product' : 'Add Product'}
+          />
         </div>
 
         <div className="products-section">
