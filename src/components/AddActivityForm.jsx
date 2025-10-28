@@ -112,7 +112,7 @@ export default function AddActivityForm({ addActivity }) {
         onChange={handleChange}
       />
 
-      <button type="submit" className="btn-submit">
+      <button type="submit" className="btn btn-primary btn-submit">
         Add Activity
       </button>
     </form>

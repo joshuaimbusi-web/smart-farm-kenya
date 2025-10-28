@@ -111,7 +111,7 @@ export default function FarmProducts() {
                   Ksh {product.price.toLocaleString()}
                 </span>
                 <button
-                  className="sell-btn"
+                  className="sell-btn btn btn-primary"
                   disabled={loadingProductId === product.id}
                   onClick={() => handleSell(product)}
                 >

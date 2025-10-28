@@ -20,9 +20,38 @@ export default function Activities({ activities, deleteActivity }) {
       return 0;
     });
 
+  const stats = {
+    total: activities.length,
+    completed: activities.filter(a => a.status.toLowerCase() === "completed").length,
+    inProgress: activities.filter(a => a.status.toLowerCase() === "in progress").length,
+    pending: activities.filter(a => a.status.toLowerCase() === "pending").length
+  };
+
   return (
     <div className="activities-page">
-      <h1 className="page-title">All Farm Activities</h1>
+      <div className="activities-header">
+        <h1 className="page-title">Farm Activities</h1>
+        <p className="activities-subtitle">Track and manage all your farming operations</p>
+        
+        <div className="stats-grid">
+          <div className="stat-card">
+            <span className="stat-value">{stats.total}</span>
+            <span className="stat-label">Total Activities</span>
+          </div>
+          <div className="stat-card completed">
+            <span className="stat-value">{stats.completed}</span>
+            <span className="stat-label">Completed</span>
+          </div>
+          <div className="stat-card in-progress">
+            <span className="stat-value">{stats.inProgress}</span>
+            <span className="stat-label">In Progress</span>
+          </div>
+          <div className="stat-card pending">
+            <span className="stat-value">{stats.pending}</span>
+            <span className="stat-label">Pending</span>
+          </div>
+        </div>
+      </div>
 
       <FilterBar
         filter={filter}
@@ -37,6 +66,14 @@ export default function Activities({ activities, deleteActivity }) {
         activities={filteredActivities}
         deleteActivity={deleteActivity}
       />
+      
+      {filteredActivities.length === 0 && (
+        <div className="empty-message">
+          <span role="img" aria-label="empty">📝</span>
+          <h3>No activities found</h3>
+          <p>Try adjusting your filters or add a new activity</p>
+        </div>
+      )}
     </div>
   );
 }

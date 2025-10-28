@@ -14,6 +14,8 @@ export default function FarmerDashboard() {
   });
   const [editingId, setEditingId] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterStatus, setFilterStatus] = useState("all");
 
   useEffect(() => {
     fetch("http://localhost:3000/farmProducts")
@@ -75,6 +77,7 @@ export default function FarmerDashboard() {
   const handleEdit = (product) => {
     setForm(product);
     setEditingId(product.id);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleStatusChange = async (id, newStatus) => {
@@ -90,57 +93,203 @@ export default function FarmerDashboard() {
     }
   };
 
+  const filteredProducts = products.filter(p => {
+    const matchesSearch = 
+      (p.name?.toLowerCase() || '').includes(searchTerm.toLowerCase()) ||
+      (p.description?.toLowerCase() || '').includes(searchTerm.toLowerCase());
+    const matchesStatus = filterStatus === "all" || (p.status || "Available") === filterStatus;
+    return matchesSearch && matchesStatus;
+  });
+
+  const stats = {
+    total: products.length,
+    available: products.filter(p => (p.status || "Available") === "Available").length,
+    reserved: products.filter(p => (p.status || "Available") === "Reserved").length,
+    sold: products.filter(p => (p.status || "Available") === "Sold").length,
+  };
+
   if (loading) return <Loader text="Loading your farm products..." />;
 
   return (
     <div className="farmer-dashboard">
-      <h1 className="dashboard-title">Farmer Dashboard</h1>
+      <div className="dashboard-header">
+        <h1>Farmer Dashboard</h1>
+        <p className="dashboard-subtitle">Manage your farm products and inventory</p>
+        
+        <div className="stats-grid">
+          <div className="stat-card">
+            <span className="stat-value">{stats.total}</span>
+            <span className="stat-label">Total Products</span>
+          </div>
+          <div className="stat-card available">
+            <span className="stat-value">{stats.available}</span>
+            <span className="stat-label">Available</span>
+          </div>
+          <div className="stat-card reserved">
+            <span className="stat-value">{stats.reserved}</span>
+            <span className="stat-label">Reserved</span>
+          </div>
+          <div className="stat-card sold">
+            <span className="stat-value">{stats.sold}</span>
+            <span className="stat-label">Sold</span>
+          </div>
+        </div>
+      </div>
 
-      <form onSubmit={handleSubmit} className="product-form">
-        <input name="name" value={form.name} onChange={handleChange} placeholder="Product name" required />
-        <input name="description" value={form.description} onChange={handleChange} placeholder="Description" required />
-        <input name="price" value={form.price} onChange={handleChange} placeholder="Price (Ksh)" type="number" required />
-        <input name="category" value={form.category} onChange={handleChange} placeholder="Category" required />
-        <input name="quantity" value={form.quantity} onChange={handleChange} placeholder="Quantity" type="number" required />
-        <input name="image" value={form.image} onChange={handleChange} placeholder="Image URL" />
-
-        <select name="status" value={form.status} onChange={handleChange}>
-          <option value="Available">Available</option>
-          <option value="Reserved">Reserved</option>
-          <option value="Sold">Sold</option>
-        </select>
-
-        <button type="submit" className="save-btn">
-          {editingId ? "Update Product" : "Add Product"}
-        </button>
-      </form>
-
-      <div className="products-table">
-        {products.map((p) => (
-          <div key={p.id} className="product-row">
-            <img src={p.image} alt={p.name} className="product-thumb" />
-            <div className="product-details">
-              <h3>{p.name}</h3>
-              <p>{p.description}</p>
-              <p>
-                Ksh {p.price} | {p.category} | Qty: {p.quantity}
-              </p>
-              <p>Status: <strong>{p.status}</strong></p>
+      <div className="dashboard-content">
+        <div className="product-form-section">
+          <h2>{editingId ? "Edit Product" : "Add New Product"}</h2>
+          <form onSubmit={handleSubmit} className="product-form">
+            <div className="form-row">
+              <div className="form-group">
+                <label>Product Name</label>
+                <input
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Enter product name"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Category</label>
+                <input
+                  name="category"
+                  value={form.category}
+                  onChange={handleChange}
+                  placeholder="Enter category"
+                  required
+                />
+              </div>
             </div>
-            <div className="actions">
-              <button onClick={() => handleEdit(p)}>Edit</button>
-              <button onClick={() => handleDelete(p.id)}>Delete</button>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label>Price (Ksh)</label>
+                <input
+                  name="price"
+                  type="number"
+                  value={form.price}
+                  onChange={handleChange}
+                  placeholder="Enter price"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Quantity</label>
+                <input
+                  name="quantity"
+                  type="number"
+                  value={form.quantity}
+                  onChange={handleChange}
+                  placeholder="Enter quantity"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label>Description</label>
+              <textarea
+                name="description"
+                value={form.description}
+                onChange={handleChange}
+                placeholder="Enter product description"
+                required
+              />
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label>Image URL</label>
+                <input
+                  name="image"
+                  value={form.image}
+                  onChange={handleChange}
+                  placeholder="Enter image URL"
+                />
+              </div>
+              <div className="form-group">
+                <label>Status</label>
+                <select name="status" value={form.status} onChange={handleChange}>
+                  <option value="Available">Available</option>
+                  <option value="Reserved">Reserved</option>
+                  <option value="Sold">Sold</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" className="btn btn-primary submit-btn">
+              {editingId ? "Update Product" : "Add Product"}
+            </button>
+          </form>
+        </div>
+
+        <div className="products-section">
+          <div className="products-header">
+            <h2>Product Inventory</h2>
+            <div className="products-filters">
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-input"
+              />
               <select
-                value={p.status}
-                onChange={(e) => handleStatusChange(p.id, e.target.value)}
+                value={filterStatus}
+                onChange={(e) => setFilterStatus(e.target.value)}
+                className="filter-select"
               >
-                <option>Available</option>
-                <option>Reserved</option>
-                <option>Sold</option>
+                <option value="all">All Status</option>
+                <option value="Available">Available</option>
+                <option value="Reserved">Reserved</option>
+                <option value="Sold">Sold</option>
               </select>
             </div>
           </div>
-        ))}
+
+          <div className="products-grid">
+            {filteredProducts.map((p) => (
+              <div key={p.id} className="product-card dashboard-card">
+                <img src={p.image} alt={p.name} className="product-image" />
+                <div className="product-content">
+                  <h3>{p.name}</h3>
+                  <p className="product-description">{p.description}</p>
+                  <div className="product-meta">
+                    <span className="price">Ksh {p.price}</span>
+                    <span className="quantity">Qty: {p.quantity}</span>
+                    <span className={`status status-${(p.status || 'available').toLowerCase()}`}>
+                      {p.status || 'Available'}
+                    </span>
+                  </div>
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-outline edit-btn"
+                      onClick={() => handleEdit(p)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="btn btn-danger delete-btn"
+                      onClick={() => handleDelete(p.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {filteredProducts.length === 0 && (
+            <div className="empty-message">
+              <span role="img" aria-label="empty">📦</span>
+              <h3>No products found</h3>
+              <p>Add new products or adjust your filters</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

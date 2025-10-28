@@ -76,29 +76,19 @@
       ]
     },
     {
-      "id": "2f6d",
-      "title": "planting carrots",
-      "date": "2025-10-24",
+      "id": "f1c8",
+      "title": "planting guava",
+      "date": "2025-10-29",
       "type": "planting",
       "status": "in progress",
-      "description": "ongoing",
+      "description": "planted near slopes",
       "workers": [
-        "Brian",
-        "Tom"
+        "fred",
+        "joshua"
       ]
     }
   ],
   "farmProducts": [
-    {
-      "id": "1",
-      "name": "Fresh Eggs",
-      "description": "Farm-fresh organic eggs from free-range chickens.",
-      "price": 300,
-      "category": "Animal Products",
-      "image": "https://cdn.pixabay.com/photo/2019/05/31/00/15/egg-4241145_1280.jpg",
-      "status": "Reserved",
-      "quantity": "20"
-    },
     {
       "id": "2",
       "name": "Cabbages",
@@ -114,6 +104,24 @@
       "price": 800,
       "category": "Animal Products",
       "image": "https://cdn.pixabay.com/photo/2020/03/16/19/43/chicken-4938114_640.jpg"
+    },
+    {
+      "id": "5085",
+      "name": "apple",
+      "description": "to be planted in large scale",
+      "price": "50",
+      "category": "fruit",
+      "quantity": "3",
+      "image": "https://media.istockphoto.com/id/1348855174/photo/pile-of-tasty-red-apples-with-leaves-as-background-top-view.jpg?s=612x612&w=0&k=20&c=SHn4ZpAPr2heusHu1WowrgjUVEaouMGPjw-4f-FDI1A=",
+      "status": "Available"
+    },
+    {
+      "id": "2077",
+      "name": "dogs",
+      "category": "Animal Products",
+      "price": 500,
+      "description": "selling german sherphards",
+      "image": "https://media.istockphoto.com/id/651754296/photo/german-shepard.jpg?s=1024x1024&w=is&k=20&c=Ym0UF5oWePbvr8CKKjbiYv3V7VITkFA4RzKsh4XWM0s="
     }
   ],
   "soldItems": [
@@ -152,6 +160,37 @@
       "category": "Cereals",
       "image": "https://cdn.pixabay.com/photo/2023/02/06/17/30/beans-7772449_640.jpg",
       "soldDate": "2025-10-27T20:44:30.099Z"
+    },
+    {
+      "id": "fed3",
+      "name": "eggs",
+      "description": "Farm-fresh organic eggs from free-range chickens.",
+      "price": "30",
+      "category": "Animal Products",
+      "quantity": "20",
+      "image": "https://cdn.pixabay.com/photo/2019/05/31/00/15/egg-4241145_1280.jpg",
+      "status": "Available",
+      "soldDate": "2025-10-28T07:54:59.486Z"
+    },
+    {
+      "id": "1",
+      "name": "Fresh Eggs",
+      "description": "Farm-fresh organic eggs from free-range chickens.",
+      "price": 300,
+      "category": "Animal Products",
+      "image": "https://cdn.pixabay.com/photo/2019/05/31/00/15/egg-4241145_1280.jpg",
+      "status": "Reserved",
+      "quantity": "30",
+      "soldDate": "2025-10-28T12:06:46.581Z"
+    },
+    {
+      "id": "edf4",
+      "name": "wheat",
+      "category": "Cereals",
+      "price": 100,
+      "description": "selling at at a manageable price",
+      "image": "",
+      "soldDate": "2025-10-28T12:23:50.564Z"
     }
   ],
   "pestsAndDiseases": [
@@ -162,7 +201,7 @@
       "symptoms": "Leaves appear ragged with holes; larvae found inside maize whorls.",
       "prevention": "Plant early, rotate crops, and use pest-resistant maize varieties.",
       "control": "Apply Bt-based biopesticides or neem extracts.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Spodoptera_frugiperda_larva.jpg"
+      "image": "https://media.istockphoto.com/id/2159255330/photo/the-fall-armyworm-on-corn-plant-spodoptera-frugiperda-moth-larva.jpg?s=612x612&w=0&k=20&c=bUXzSFvAI2x4EeU0wWS0S6wNkwd1oCqI9kSM4UVgfRc="
     },
     {
       "id": 2,
@@ -218,6 +257,27 @@
       "name": "Admin Mary",
       "email": "mary@smartfarm.com",
       "password": "5678"
+    },
+    {
+      "id": "0f3f",
+      "name": "fredrick",
+      "email": "fredrickshikanga@gmail.com",
+      "password": "$2b$10$T6kc7hoBUE3N1uv69WAcIuxHMrTRKnDWqVP48gV8p5LXao/fikzf.",
+      "role": "buyer"
+    },
+    {
+      "id": "b2ee",
+      "name": "brian",
+      "email": "ogweri.brian98@gmail.com",
+      "password": "$2b$10$Trc9ki9ehYUADr27qumv.O50cfDoBm9BXBf.z1LZtpOejZg7kKjKu",
+      "role": "farmer"
+    },
+    {
+      "id": "f686",
+      "name": "mary mutonyi",
+      "email": "marymutonyi@gmail.com",
+      "password": "$2b$10$4Stz.hb8p01/1UZH3GQy2ep0V9x8yoXJ.kk8GZzqMTnKmQ9TCL.gm",
+      "role": "buyer"
     }
   ]
-} 
+}
