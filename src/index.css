@@ -1105,6 +1105,142 @@ background-image: url('https://www.kenyanews.go.ke/wp-content/uploads/2022/09/Ag
   text-align: center;
   color: #777;
 }
+.error-msg {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  background: #ffffffb0;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.login-btn, .logout-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+}
+
+.login-btn:hover, .logout-btn:hover {
+  opacity: 0.9;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2d6a4f, #40916c);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #fefae0;
+  border-bottom: 2px solid #fefae0;
+}
+
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-badge {
+  background: #fefae0;
+  color: #2d6a4f;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.login-btn,
+.signup-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.login-btn {
+  background: transparent;
+  border: 2px solid #fefae0;
+  color: #fefae0;
+}
+
+.signup-btn {
+  background: #fefae0;
+  color: #2d6a4f;
+}
+
+.login-btn:hover {
+  background: #fefae0;
+  color: #2d6a4f;
+}
+
+.signup-btn:hover {
+  background: #95d5b2;
+}
+
+.logout-btn {
+  background: #e63946;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #d00000;
+}
 
 
 
