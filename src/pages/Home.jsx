@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import bcrypt from "bcryptjs";
 import { useAuth } from "../context/AuthContext";
 
 export default function Home() {
   const { user, setUser, logout, remember, setRemember } = useAuth();
+  const navigate = useNavigate();
   const [showLogin, setShowLogin] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -145,7 +146,6 @@ export default function Home() {
            <NavLink to="/about">About</NavLink>
            <NavLink to="/activities">Activities</NavLink>
            <NavLink to="/farm-products">Products</NavLink>
-           <a href="mailto:info@smartfarmkenya.com">Contact</a>
         </div>
       </footer>
     </div>
