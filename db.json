@@ -86,6 +86,18 @@
         "fred",
         "joshua"
       ]
+    },
+    {
+      "id": "91d5",
+      "title": "planting mangoes",
+      "date": "2025-10-29",
+      "type": "planting",
+      "status": "Pending",
+      "description": "to be planted in one day",
+      "workers": [
+        "Peter",
+        "Jane"
+      ]
     }
   ],
   "farmProducts": [
@@ -116,12 +128,31 @@
       "status": "Available"
     },
     {
-      "id": "2077",
-      "name": "dogs",
+      "id": "bc61",
+      "name": "pigs",
       "category": "Animal Products",
-      "price": 500,
-      "description": "selling german sherphards",
-      "image": "https://media.istockphoto.com/id/651754296/photo/german-shepard.jpg?s=1024x1024&w=is&k=20&c=Ym0UF5oWePbvr8CKKjbiYv3V7VITkFA4RzKsh4XWM0s="
+      "price": 2500,
+      "description": "it is healthy,",
+      "image": "https://plus.unsplash.com/premium_photo-1663040364167-b8026d3307dc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
+      "status": "Available"
+    },
+    {
+      "id": "df7f",
+      "name": "cows",
+      "category": "Animal Products",
+      "price": 80000,
+      "description": "Angus stud cattle in the yards",
+      "image": "https://media.istockphoto.com/id/1401813903/photo/angus-cattle.jpg?s=1024x1024&w=is&k=20&c=_APGZ7NIWoBzwSMVP9vi3hT_siGmQgA7zbXpBXdwycI=",
+      "status": "Available"
+    },
+    {
+      "id": "df7f",
+      "name": "cows",
+      "category": "Animal Products",
+      "price": 80000,
+      "description": "Angus stud cattle in the yards",
+      "image": "https://media.istockphoto.com/id/1401813903/photo/angus-cattle.jpg?s=1024x1024&w=is&k=20&c=_APGZ7NIWoBzwSMVP9vi3hT_siGmQgA7zbXpBXdwycI=",
+      "status": "Available"
     }
   ],
   "soldItems": [
@@ -191,6 +222,25 @@
       "description": "selling at at a manageable price",
       "image": "https://plus.unsplash.com/premium_photo-1674654419404-667fcdd0fe13?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2hlYXQlMjBzZWVkfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500",
       "soldDate": "2025-10-28T12:23:50.564Z"
+    },
+    {
+      "id": "2077",
+      "name": "dogs",
+      "category": "Animal Products",
+      "price": 500,
+      "description": "selling german sherphards",
+      "image": "https://media.istockphoto.com/id/651754296/photo/german-shepard.jpg?s=1024x1024&w=is&k=20&c=Ym0UF5oWePbvr8CKKjbiYv3V7VITkFA4RzKsh4XWM0s=",
+      "soldDate": "2025-10-28T16:12:53.141Z"
+    },
+    {
+      "id": "df7f",
+      "name": "cows",
+      "category": "Animal Products",
+      "price": 80000,
+      "description": "Angus stud cattle in the yards",
+      "image": "https://media.istockphoto.com/id/1401813903/photo/angus-cattle.jpg?s=1024x1024&w=is&k=20&c=_APGZ7NIWoBzwSMVP9vi3hT_siGmQgA7zbXpBXdwycI=",
+      "status": "Available",
+      "soldDate": "2025-10-28T16:42:32.809Z"
     }
   ],
   "pestsAndDiseases": [
@@ -278,7 +328,13 @@
       "email": "marymutonyi@gmail.com",
       "password": "$2b$10$4Stz.hb8p01/1UZH3GQy2ep0V9x8yoXJ.kk8GZzqMTnKmQ9TCL.gm",
       "role": "buyer"
+    },
+    {
+      "id": "df5e",
+      "name": "Meshack morgan",
+      "email": "meshackmrgn@gmail.com",
+      "password": "$2b$10$kqIbljpQotUHXvCSrRHwWuXA0M/XMXdqbfvdZU55VUBOFRRqHGiRS",
+      "role": "buyer"
     }
   ]
-
 }
