@@ -11,7 +11,6 @@
   --border: #d1d5db;
   --shadow-sm: 0 1px 4px rgba(0,0,0,0.04);
   --shadow-md: 0 2px 6px rgba(0,0,0,0.06);
-  /* themeable logo color (change this to theme the header) */
   --logo-color: #FFD400;
   --logo-text-shadow: 0 1px 2px rgba(0,0,0,0.35);
 }
@@ -284,11 +283,10 @@ h3 { font-size: 1.2rem; font-weight: 600; }
   color: white;
 }
 
-/* site logo (header) */
 .logo {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--logo-color, #FFD400); /* themable via --logo-color */
+  color: var(--logo-color, #FFD400); 
   text-shadow: var(--logo-text-shadow, 0 1px 2px rgba(0,0,0,0.35));
 }
 
@@ -318,7 +316,6 @@ h3 { font-size: 1.2rem; font-weight: 600; }
   gap: 0.6rem;
 }
 
-/* menu toggle (mobile) - hidden by default, shown via media query */
 .menu-toggle {
   display: none;
   background: transparent;
@@ -695,7 +692,6 @@ h3 { font-size: 1.2rem; font-weight: 600; }
 
 .product-text { max-height: 66px; overflow: hidden; text-overflow: ellipsis; }
 
-/* ===== Add Product Page ===== */
 .add-product-container {
   max-width: 800px;
   margin: 2rem auto;
@@ -754,11 +750,9 @@ h3 { font-size: 1.2rem; font-weight: 600; }
 }
 
 .error-msg {
-  /* keep existing error styling but ensure spacing in product form */
   margin-top: 0.5rem;
 }
 
-/* ===== Add Activity Form tweaks ===== */
 .activity-form {
   max-width: 700px;
   margin: 1rem auto;
@@ -889,15 +883,6 @@ h3 { font-size: 1.2rem; font-weight: 600; }
   text-decoration: underline;
 }
 
-/* DEBUG: temporary visual aid to check that footer Contact button is clickable and not covered */
-.debug-outline .footer-link-btn {
-  outline: 3px solid rgba(255, 0, 0, 0.9);
-  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.12);
-  z-index: 9999;
-  position: relative;
-}
-
-/* optional: show pointer area as background during debug */
 .debug-outline .footer-link-btn::after {
   content: "";
   position: absolute;
@@ -1522,7 +1507,6 @@ h3 { font-size: 1.2rem; font-weight: 600; }
   }
 }
 
-/* Activity Details page styles */
 .activity-detail-page {
   padding: 2rem 1rem 3rem;
 }
@@ -1589,45 +1573,4 @@ h3 { font-size: 1.2rem; font-weight: 600; }
     flex-direction: column;
     gap: 0.5rem;
   }
-}
-
-/* Contact page styles */
-.contact-page {
-  padding: 2rem 1rem 3rem;
-}
-
-.contact-card {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 1.25rem 1.5rem;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-}
-
-.contact-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.7rem;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-}
-
-.contact-form .btn-outline {
-  padding: 0.6rem 0.9rem;
-}
-
-@media (max-width: 480px) {
-  .contact-card { padding: 1rem; }
 }

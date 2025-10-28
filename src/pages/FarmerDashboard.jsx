@@ -27,7 +27,6 @@ export default function FarmerDashboard() {
       .finally(() => setLoading(false));
   }, []);
 
-  // handle save from ProductForm (create or update)
   async function handleSave(productData) {
     try {
       const method = editingId ? 'PUT' : 'POST';
@@ -42,7 +41,6 @@ export default function FarmerDashboard() {
       setProducts((prev) =>
         editingId ? prev.map((p) => (p.id === editingId ? saved : p)) : [...prev, saved]
       );
-      // clear editing state
       setEditingId(null);
       setEditingProduct(null);
       return saved;
